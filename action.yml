@@ -1,0 +1,17 @@
+# https://help.github.com/en/articles/metadata-syntax-for-github-actions
+
+name: 'Delete latest release'
+description: 'Delete latest release'
+author: "ame-yu"
+env:
+  "GITHUB_TOKEN": "As provided by Github Actions"
+  "GITHUB_REPOSITORY": "As provided by Github Actions"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  color: "red"
+  icon: "delete"
+
+
+  
