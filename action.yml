@@ -3,9 +3,14 @@
 name: 'Delete latest release'
 description: 'Delete latest release'
 author: "ame-yu"
-env:
-  "GITHUB_TOKEN": "As provided by Github Actions"
-  "GITHUB_REPOSITORY": "As provided by Github Actions"
+inputs:
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
+  repository:
+    description: 'Repository name. Default or empty value represents current github repository (${GITHUB_REPOSITORY})'
+    default: ''
+    required: false
 runs:
   using: "node12"
   main: "dist/index.js"
